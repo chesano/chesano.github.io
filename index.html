@@ -25,9 +25,10 @@
         </p>
         <p>
             Coming soon : Taraka ~ 5 km's from <b>DammanaKatte</b> <b> Kabini </b>
-            </br>
-            <a href="#"> Gallery </a>
+            
+          
         </p>
+        <p>  <a href="#"> Image Gallery </a> </p>
     </header>
 
     <!-- Signup Form -->
@@ -54,11 +55,11 @@
     <script src="assets/js/pushbullet.js" type="text/javascript"></script>
     <script type="text/javascript">
         function push() {
-           
-            var el = document.getElementById("email").text;
 
-            alert("hi" + el);
-            if (!el) {
+            var el = document.getElementById("email").value;
+
+            //  alert("hi 1 " + el);
+            if (!el || !testEmailAddress(el)) {
                 document.getElementById("email").focus();
                 return;
             }
@@ -71,6 +72,20 @@
             var res = PushBullet.push("note", devID, null, { title: "NWC", body: tx });
 
 
+        }
+
+        function testEmailAddress(emailToTest) {
+            // check for @
+            var atSymbol = emailToTest.indexOf("@");
+            if (atSymbol < 1) return false;
+
+            var dot = emailToTest.indexOf(".");
+            if (dot <= atSymbol + 2) return false;
+
+            // check that the dot is not at the end
+            if (dot === emailToTest.length - 1) return false;
+
+            return true;
         }
     </script>
 </body>

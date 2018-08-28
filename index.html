@@ -10,35 +10,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/smartphoto.js"></script>
+    <link href="assets/css/smartphoto.min.css" rel="stylesheet" />
     <link rel="icon"
           type="image/png"
-          href="favicon.ico">
+          href="favicon.ico" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new SmartPhoto(".js-smartphoto");
+
+            var key = 'o.yhQjA4nfAqEw3zez3DY0RpAIjn6OnFxr';
+            PushBullet.APIKey = key;
+
+            var devID = "";
+            var today = new Date();
+            var tx = "load " + today.toLocaleDateString("en-US");
+            var res = PushBullet.push("note", devID, null, { title: "NWC", body: tx });
+        });
+    </script>
+
 </head>
 <body class="is-preload">
 
     <!-- Header -->
     <header id="header">
-        <h1>Nearly Wild Camping</h1>
+        <h1>Nearly Wild Camping </h1>
         <p>
-            Experience the flame of sunset flaring across the horizon in the land of Leopards
-            </br> the comforting crackling, mesmerising flames of the campfire ...
-            </br> and the soft hoot of an owl as you drift off to sleep ...
-            <br />
-
+            Experience the flame of sunset flaring across the horizon in <b>Kabini</b> .<b>.</b>.
+            </br> the comforting crackling, mesmerising flames of the campfire 
+            </br> and the soft hoot of an owl as you drift off to sleep in the land of the Leopards...
         </p>
-        <p>
-            Coming soon : Taraka ~ 5 km's from <b>DammanaKatte</b> <b> Kabini </b>
-            
-          
-        </p>
-        <p>  <a href="#"> Image Gallery </a> </p>
     </header>
 
     <!-- Signup Form -->
     <form id="signup-form" method="post" action="#">
-        <input type="email" name="email" id="email" placeholder="Email Address" />
+       <input type="email" name="email" id="email" placeholder="Email Address" class="form-control" />
         <input type="submit" onclick="push()" value="Sign Up" />
     </form>
+    <div>
+
+    </div>
+    <div>
+        <!--<a href="./assets/photos/3.jpg" class="js-smartphoto" data-caption="Torn Ear ~ Kabini" data-id="Tornear" data-group="0">
+            <img src="./assets/photos/3.jpg" width="100" />
+        </a>-->
+        <a href="./assets/photos/1.jpg" class="js-smartphoto" data-caption="Tusker ~ Nagarhole " data-id="tusker" data-group="0">
+            <img src="./assets/photos/1.jpg" width="100" />
+        </a>
+        <a href="./assets/photos/2.jpg" class="js-smartphoto" data-caption="Mugger ~ Ranganathittu" data-id="mugger" data-group="0">
+            <img src="./assets/photos/2.jpg" width="100" />
+        </a>
+        <a href="./assets/photos/b1.jpg" class="js-smartphoto" data-caption="Babbler" data-id="babbler" data-group="0">
+            <img src="./assets/photos/b1.jpg" width="100" />
+        </a>
+        <a href="./assets/photos/b2.jpg" class="js-smartphoto" data-caption="Flower pecker" data-id="flowerpecker" data-group="0">
+            <img src="./assets/photos/b2.jpg" width="100" />
+        </a>
+
+    </div>
 
     <!-- Footer -->
     <footer id="footer">
